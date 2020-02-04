@@ -1,6 +1,7 @@
 ## Rectangles (No UI required) 
 
 Determine if two rectangles intersect.
+**Assumed rectangles has no rotation angle.**
 
 #### Scripts
 - `npm run check "[first recatngle points]" "[second rectangle points]"`

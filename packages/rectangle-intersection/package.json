@@ -4,7 +4,7 @@
   "description": "Check if rectangles intersect",
   "main": "index.js",
   "scripts": {
-    "check": "node index.js",
+    "check": "node index.js '[-1,-1,2,2]' '[1,1,3,3]'",
     "test:jest": "jest --runInBand --watch --watchAll"
   },
   "author": "Vadim Sheydakov",
