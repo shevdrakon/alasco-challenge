@@ -1,0 +1,49 @@
+{
+  "name": "currency-conversion",
+  "version": "0.0.1",
+  "description": "Currency conversion",
+  "main": "index.js",
+  "scripts": {
+    "start:client": "webpack-dev-server --config ./webpack/webpack.development.config --mode development --hot --inline --color",
+    "storybook": "start-storybook --ci -p 9002 -c .storybook",
+    "test:jest": "jest --runInBand --config tests/config/jest.config.js --watch --watchAll"
+  },
+  "author": "Vadim Sheydakov",
+  "license": "ISC",
+  "dependencies": {
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "minimist": "1.2.0",
+    "classnames": "2.2.6",
+    "isomorphic-fetch": "2.2.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "5.3.10",
+    "@storybook/addon-docs": "5.3.10",
+    "@storybook/addons": "5.3.10",
+    "@storybook/react": "5.3.10",
+    "webpack": "4.41.5",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.10.2",
+    "html-webpack-plugin": "4.0.0-beta.11",
+    "react-dev-utils": "10.1.0",
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.8.4",
+    "@babel/preset-env": "7.8.4",
+    "@babel/preset-react": "7.8.3",
+    "@babel/register": "7.8.3",
+    "babel-loader": "8.0.6",
+    "babel-jest": "25.1.0",
+    "css-loader": "3.4.2",
+    "sass-loader": "8.0.2",
+    "style-loader": "1.1.3",
+    "node-sass": "4.13.1",
+    "prop-types": "15.7.2",
+    "react-is": "16.12.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16.3": "1.7.2",
+    "jest": "25.1.0",
+    "react-test-renderer": "16.12.0",
+    "identity-obj-proxy": "3.0.0"
+  }
+}

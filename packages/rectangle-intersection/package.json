@@ -1,0 +1,15 @@
+{
+  "name": "rectangle-intersection",
+  "version": "0.0.1",
+  "description": "Check if rectangles intersect",
+  "main": "index.js",
+  "scripts": {
+    "check": "node index.js",
+    "test:jest": "jest --runInBand --watch --watchAll"
+  },
+  "author": "Vadim Sheydakov",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "25.1.0"
+  }
+}

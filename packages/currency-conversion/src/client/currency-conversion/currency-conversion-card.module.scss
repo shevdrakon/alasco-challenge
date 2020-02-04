@@ -1,0 +1,50 @@
+@import '../styles/media';
+
+.currency__select {
+  margin-bottom: 14px;
+}
+
+.content {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.content__container {
+  margin: 0 auto;
+  padding: 0;
+  float: none;
+}
+
+.card {
+  min-height: 210px;
+}
+
+.transferColumn {
+  display: none;
+
+  @include respond-above(tablet) {
+    display: block;
+  }
+}
+
+.transferIcon {
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.exchangeButton {
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  @include respond-above(tablet) {
+    width: 40px;
+  }
+}
+
+.result {
+  text-align: center;
+}

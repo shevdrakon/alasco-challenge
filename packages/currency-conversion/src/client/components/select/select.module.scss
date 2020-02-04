@@ -1,0 +1,76 @@
+@import '../../styles/input-controls';
+
+.select {
+  &__label {
+    @include input-label();
+  }
+
+  &__root {
+    position: relative;
+  }
+
+  &__dropdown {
+    @include input();
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    outline: 0;
+    background-image: none;
+
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+
+    &--active {
+      @include input-focus();
+    }
+  }
+
+  &__arrow {
+    //border-color: rgb(0, 137, 255) transparent transparent;
+    border-color: #999 transparent transparent;
+    border-style: solid;
+    border-width: 5px 5px 0;
+    content: " ";
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    width: 0;
+
+    &--active {
+      border-width: 0 5px 5px;
+    }
+  }
+
+  &__menu {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .06);
+    box-sizing: border-box;
+    margin-top: -1px;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    //z-index: 1000;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1;
+  }
+
+  &__option {
+    color: rgb(76, 86, 105);
+    box-sizing: border-box;
+    //color: rgba(51,51,51,.8);
+    cursor: pointer;
+    display: block;
+    padding: 8px 10px;
+
+    &:hover {
+      background-color: #f2f9fc;
+    }
+  }
+}

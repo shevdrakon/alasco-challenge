@@ -1,0 +1,11 @@
+{
+  "name": "dices",
+  "version": "0.0.1",
+  "description": "Dices Game",
+  "main": "index.js",
+  "scripts": {
+    "play": "node index.js 1000"
+  },
+  "author": "Vadim Sheydakov",
+  "license": "ISC"
+}
