@@ -1,0 +1,10 @@
+name: deploy_to_channel_on_demand
+
+on: issue_comment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: logging
+        run: echo "$GITHUB_REF"
