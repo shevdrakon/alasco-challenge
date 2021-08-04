@@ -9,15 +9,30 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 0 # 0 - indicates all history
+
+      # checkout the private repo containing the action to run
+      - name: Checkout GitHub Action Repo
+        uses: actions/checkout@v2
         with:
-#           0 indicates all history
-          fetch-depth: 0
+          repository: nwtgck/actions-comment-run
+#          ref: v0.1.2
+#          token: ${{ secrets.GIT_HUB_TOKEN }} # stored in GitHub secrets
+          path: .github/actions/my-action
+
+      - run: cd .github/actions && ls -a
+      - run: cd .github/actions/my-action && ls -a
+
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-      - uses: actions/core
-      - run: ls -a
-      - run: node ./.github/pr-bot/index.js
+      - run: npm install @actions/github@5.0.0 @notionhq/client@0.2.4
+      - name: "TESTING"
+        env:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          notion-token: ${{ secrets.NOTION_API_TOKEN }}
+        run: node ./.github/pr-bot/index.js
       - uses: nwtgck/actions-comment-run@v1.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
