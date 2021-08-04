@@ -8,10 +8,10 @@ jobs:
   comment-run:
     runs-on: ubuntu-18.04
     steps:
-      #    - uses: actions/checkout@v2
-      #      with:
-      #         0 indicates all history
-      #        fetch-depth: 0
+      - uses: actions/checkout@v2
+        with:
+#           0 indicates all history
+          fetch-depth: 0
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
