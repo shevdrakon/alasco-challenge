@@ -1,5 +1,4 @@
-# .github/workflows/comment-run.yml
-name: "Comment run"
+name: "@alasco-bot"
 on:
   issue_comment:
     types: [created, edited]
@@ -8,32 +7,31 @@ jobs:
   comment-run:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+#      - uses: actions/checkout@v2
 #        with:
 #          fetch-depth: 0 # 0 - indicates all history
 
       # checkout the private repo containing the action to run
-      - name: Checkout GitHub Action Repo
+      - name: Checkout alasco-bot action repo
         uses: actions/checkout@v2
         with:
-          repository: nwtgck/actions-comment-run
-#          ref: v0.1.2
+          repository: shevdrakon/alasco-bot
+          ref: main
 #          token: ${{ secrets.GIT_HUB_TOKEN }} # stored in GitHub secrets
-          path: .github/actions/my-action
+          path: .github/actions/alasco-bot
 
       - run: cd .github/actions && ls -a
-      - run: cd .github/actions/my-action && ls -a
+      - run: cd .github/actions/alasco-bot && ls -a
 
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-      - run: npm install @actions/github@5.0.0 @notionhq/client@0.2.4
       - name: "TESTING"
         env:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           notion-token: ${{ secrets.NOTION_API_TOKEN }}
-        run: node ./.github/pr-bot/index.js
-      - uses: nwtgck/actions-comment-run@v1.1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          allowed-associations: '["OWNER", "MEMBER"]'
+        run: node ./.github/actions/alasco-bot/dist/index.js
+#      - uses: nwtgck/actions-comment-run@v1.1
+#        with:
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
+#          allowed-associations: '["OWNER", "MEMBER"]'
